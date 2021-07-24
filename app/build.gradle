@@ -93,15 +93,6 @@ dependencies {
     implementation group: 'vc.inreach.aws', name: 'aws-signing-request-interceptor', version: '0.0.22'
 }
 
-application {
-    // Define the main class for the application.
-    mainClassName = 'com.corporate.realtime.analytics.App'
-}
-
-version = '1.0'
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 // make compileOnly dependencies available for tests:
 sourceSets {
     main.compileClasspath += configurations.flinkShadowJar
