@@ -127,10 +127,6 @@ jar {
     }
 }
 
-shadowJar {
-    configurations = [project.configurations.flinkShadowJar]
-}
-
 task fatJar(type: Jar) {
     zip64 true
 	manifest {
