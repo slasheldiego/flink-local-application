@@ -152,4 +152,17 @@ task fatJar(type: Jar) {
 
 shadowJar {
     configurations = [project.configurations.flinkShadowJar]
+    zip64 true
+	manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+        	'Implementation-Version': version,
+        	"Main-Class": "$mainClassName"
+    }
+    configurations.implementation.setCanBeResolved(true)
+    baseName = project.name + '-all'
+    from { configurations.implementation.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+    exclude "META-INF/*.SF"
+    exclude "META-INF/*.DSA"
+    exclude "META-INF/*.RSA"
 }
