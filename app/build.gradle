@@ -152,8 +152,10 @@ task fatJar(type: Jar) {
 }
 
 shadowJar {
+    transform(com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer) {
+        resource = 'reference.conf'
+    }
     configurations = [project.configurations.compileClasspath]
-    include 'reference.conf'
     zip64 true
 	manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',
