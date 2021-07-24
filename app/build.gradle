@@ -81,7 +81,7 @@ configurations {
     flinkShadowJar.exclude group: 'com.google.code.findbugs', module: 'jsr305'
     flinkShadowJar.exclude group: 'org.slf4j'
     flinkShadowJar.exclude group: 'log4j'
-    implementation group: 'org.apache.flink', name: 'flink-clients_2.11', version: '1.13.0'
+    flinkShadowJar.implementation group: 'org.apache.flink', name: 'flink-clients_2.11', version: '1.13.0'
 }
 
 dependencies {
