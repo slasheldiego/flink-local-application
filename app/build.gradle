@@ -73,16 +73,15 @@ repositories {
 // in the IDE or with "gradle run". We also cannot exclude transitive dependencies from the
 // shadowJar yet (see https://github.com/johnrengelman/shadow/issues/159).
 // -> Explicitly define the // libraries we want to be included in the "flinkShadowJar" configuration!
-/*configurations {
+configurations {
     flinkShadowJar // dependencies which go into the shadowJar
 
     // always exclude these (also from transitive dependencies) since they are provided by Flink
-    //flinkShadowJar.exclude group: 'org.apache.flink', module: 'force-shading'
+    flinkShadowJar.exclude group: 'org.apache.flink', module: 'force-shading'
     flinkShadowJar.exclude group: 'com.google.code.findbugs', module: 'jsr305'
     flinkShadowJar.exclude group: 'org.slf4j'
     flinkShadowJar.exclude group: 'log4j'
-    flinkShadowJar.implementation group: 'org.apache.flink', name: 'flink-clients_2.11', version: '1.13.0'
-}*/
+}
 
 dependencies {
     // This dependency is used by the application.
@@ -115,7 +114,7 @@ dependencies {
 }
 
 // make compileOnly dependencies available for tests:
-/*sourceSets {
+sourceSets {
     main.compileClasspath += configurations.flinkShadowJar
     main.runtimeClasspath += configurations.flinkShadowJar
 
@@ -123,7 +122,7 @@ dependencies {
     test.runtimeClasspath += configurations.flinkShadowJar
 
     javadoc.classpath += configurations.flinkShadowJar
-}*/
+}
 
 //run.classpath = sourceSets.main.runtimeClasspath
 
@@ -152,18 +151,18 @@ task fatJar(type: Jar) {
 }
 
 shadowJar {
-    //configurations = [project.configurations.flinkShadowJar]
-    zip64 true
+    configurations = [project.configurations.flinkShadowJar]
+    //zip64 true
 	manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',
         	'Implementation-Version': version,
         	"Main-Class": "$mainClassName"
     }
-    configurations.implementation.setCanBeResolved(true)
+    /*configurations.implementation.setCanBeResolved(true)
     baseName = project.name + '-all'
     from { configurations.implementation.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
     exclude "META-INF/*.SF"
     exclude "META-INF/*.DSA"
-    exclude "META-INF/*.RSA"
+    exclude "META-INF/*.RSA"*/
 }
