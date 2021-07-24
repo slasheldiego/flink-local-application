@@ -73,7 +73,7 @@ repositories {
 // in the IDE or with "gradle run". We also cannot exclude transitive dependencies from the
 // shadowJar yet (see https://github.com/johnrengelman/shadow/issues/159).
 // -> Explicitly define the // libraries we want to be included in the "flinkShadowJar" configuration!
-configurations2 {
+configurations {
     flinkShadowJar // dependencies which go into the shadowJar
 
     // always exclude these (also from transitive dependencies) since they are provided by Flink
@@ -81,6 +81,7 @@ configurations2 {
     flinkShadowJar.exclude group: 'com.google.code.findbugs', module: 'jsr305'
     flinkShadowJar.exclude group: 'org.slf4j'
     flinkShadowJar.exclude group: 'log4j'
+    implementation group: 'org.apache.flink', name: 'flink-clients_2.11', version: '1.13.0'
 }
 
 dependencies {
@@ -151,7 +152,7 @@ task fatJar(type: Jar) {
 }
 
 shadowJar {
-    configurations2 = [project.configurations.flinkShadowJar]
+    configurations = [project.configurations.flinkShadowJar]
     zip64 true
 	manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',
