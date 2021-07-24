@@ -12,7 +12,7 @@ buildscript {
         jcenter() // this applies only to the Gradle 'Shadow' plugin
     }
     dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
     }
 }
 
@@ -27,7 +27,7 @@ plugins {
 
     id 'idea'
 
-    id 'com.github.johnrengelman.shadow' version '2.0.4'
+    id 'com.github.johnrengelman.shadow' version '6.0.0'
 }
 
 // artifact properties
