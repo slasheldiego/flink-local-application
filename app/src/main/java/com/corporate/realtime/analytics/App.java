@@ -3,8 +3,6 @@
  */
 package com.corporate.realtime.analytics;
 
-import com.corporate.realtime.entities.TripEvent;
-
 import java.io.PrintStream;
 import java.util.Properties;
 
