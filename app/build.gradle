@@ -47,6 +47,20 @@ repositories {
     mavenCentral()
 }
 
+// NOTE: We cannot use "compileOnly" or "shadow" configurations since then we could not run code
+// in the IDE or with "gradle run". We also cannot exclude transitive dependencies from the
+// shadowJar yet (see https://github.com/johnrengelman/shadow/issues/159).
+// -> Explicitly define the // libraries we want to be included in the "flinkShadowJar" configuration!
+configurations {
+    flinkShadowJar // dependencies which go into the shadowJar
+
+    // always exclude these (also from transitive dependencies) since they are provided by Flink
+    flinkShadowJar.exclude group: 'org.apache.flink', module: 'force-shading'
+    flinkShadowJar.exclude group: 'com.google.code.findbugs', module: 'jsr305'
+    flinkShadowJar.exclude group: 'org.slf4j'
+    flinkShadowJar.exclude group: 'log4j'
+}
+
 dependencies {
     // This dependency is used by the application.
     
@@ -76,8 +90,6 @@ dependencies {
     implementation group: 'com.amazonaws', name: 'aws-kinesisanalytics-runtime', version: '1.2.0'
     implementation group: 'vc.inreach.aws', name: 'aws-signing-request-interceptor', version: '0.0.22'
 }
-
-mainClassName = 'com.corporate.realtime.analytics.App'
 
 application {
     // Define the main class for the application.
