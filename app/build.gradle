@@ -6,15 +6,6 @@
  * User Manual available at https://docs.gradle.org/6.6/userguide/tutorial_java_projects.html
  */
 
- buildscript {
-    repositories {
-        jcenter() // this applies only to the Gradle 'Shadow' plugin
-    }
-    dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
-    }
-}
-
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
@@ -25,8 +16,6 @@ plugins {
     id 'base'
 
     id 'idea'
-
-    id 'com.github.johnrengelman.shadow' version '2.0.4'
 }
 
 // artifact properties
@@ -63,20 +52,6 @@ repositories {
     maven { url "https://repository.apache.org/content/repositories/snapshots/" }
 }
 
-// NOTE: We cannot use "compileOnly" or "shadow" configurations since then we could not run code
-// in the IDE or with "gradle run". We also cannot exclude transitive dependencies from the
-// shadowJar yet (see https://github.com/johnrengelman/shadow/issues/159).
-// -> Explicitly define the // libraries we want to be included in the "flinkShadowJar" configuration!
-configurations {
-    flinkShadowJar // dependencies which go into the shadowJar
-
-    // always exclude these (also from transitive dependencies) since they are provided by Flink
-    flinkShadowJar.exclude group: 'org.apache.flink', module: 'force-shading'
-    flinkShadowJar.exclude group: 'com.google.code.findbugs', module: 'jsr305'
-    flinkShadowJar.exclude group: 'org.slf4j'
-    flinkShadowJar.exclude group: 'log4j'
-}
-
 dependencies {
     // This dependency is used by the application.
     
@@ -105,17 +80,6 @@ dependencies {
     implementation group: 'org.apache.avro', name: 'avro', version: '1.8.2'
     implementation group: 'com.amazonaws', name: 'aws-kinesisanalytics-runtime', version: '1.2.0'
     implementation group: 'vc.inreach.aws', name: 'aws-signing-request-interceptor', version: '0.0.22'
-}
-
-// make compileOnly dependencies available for tests:
-sourceSets {
-    main.compileClasspath += configurations.flinkShadowJar
-    main.runtimeClasspath += configurations.flinkShadowJar
-
-    test.compileClasspath += configurations.flinkShadowJar
-    test.runtimeClasspath += configurations.flinkShadowJar
-
-    javadoc.classpath += configurations.flinkShadowJar
 }
 
 run.classpath = sourceSets.main.runtimeClasspath
