@@ -29,7 +29,7 @@ plugins {
 }
 
 // artifact properties
-group = 'com.corporate.realtime'
+group = 'com.corporate.realtime.analytics'
 version = '0.1-SNAPSHOT'
 mainClassName = 'com.corporate.realtime.analytics.App'
 description = """Flink Quickstart Job"""
