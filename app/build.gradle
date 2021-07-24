@@ -160,7 +160,7 @@ shadowJar {
     }
     //configurations.implementation.setCanBeResolved(true)
     baseName = project.name + '-all'
-    from { configurations.implementation.collect { it.isDirectory() ? it : zipTree(it) } }
+    //from { configurations.implementation.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
     exclude "META-INF/*.SF"
     exclude "META-INF/*.DSA"
