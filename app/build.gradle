@@ -5,6 +5,7 @@
  * For more details take a look at the Java Quickstart chapter in the Gradle
  * User Manual available at https://docs.gradle.org/6.6/userguide/tutorial_java_projects.html
  */
+mainClassName = 'com.corporate.realtime.analytics.App'
 
 buildscript {
     repositories {
