@@ -115,7 +115,7 @@ dependencies {
 }
 
 // make compileOnly dependencies available for tests:
-sourceSets {
+/*sourceSets {
     main.compileClasspath += configurations.flinkShadowJar
     main.runtimeClasspath += configurations.flinkShadowJar
 
@@ -123,9 +123,9 @@ sourceSets {
     test.runtimeClasspath += configurations.flinkShadowJar
 
     javadoc.classpath += configurations.flinkShadowJar
-}
+}*/
 
-run.classpath = sourceSets.main.runtimeClasspath
+//run.classpath = sourceSets.main.runtimeClasspath
 
 jar {
     manifest {
