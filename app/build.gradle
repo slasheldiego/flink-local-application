@@ -134,6 +134,7 @@ jar {
 }
 
 task fatJar(type: Jar) {
+    configurations = [project.configurations.flinkShadowJar]
     zip64 true
 	manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',
