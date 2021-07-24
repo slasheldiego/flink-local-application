@@ -129,7 +129,8 @@ run.classpath = sourceSets.main.runtimeClasspath
 jar {
     manifest {
         attributes 'Built-By': System.getProperty('user.name'),
-                'Build-Jdk': System.getProperty('java.version')
+                'Build-Jdk': System.getProperty('java.version'),
+                'Main-Class': mainClassName
     }
 }
 
