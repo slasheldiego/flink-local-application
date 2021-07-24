@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package com.belcorp.realtime.entities;  
+package com.corporate.realtime.entities;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class TripEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TripEvent\",\"namespace\":\"com.belcorp.realtime.entities\",\"fields\":[{\"name\":\"vendor_id\",\"type\":\"int\"},{\"name\":\"pickup_datetime\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"dropoff_datetime\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"passenger_count\",\"type\":\"int\"},{\"name\":\"trip_distance\",\"type\":\"double\"},{\"name\":\"ratecode_id\",\"type\":\"int\"},{\"name\":\"store_and_fwd_flag\",\"type\":\"string\"},{\"name\":\"pickup_location_id\",\"type\":\"int\"},{\"name\":\"dropoff_location_id\",\"type\":\"int\"},{\"name\":\"payment_type\",\"type\":\"int\"},{\"name\":\"fare_amount\",\"type\":\"double\"},{\"name\":\"extra\",\"type\":\"double\"},{\"name\":\"mta_tax\",\"type\":\"double\"},{\"name\":\"tip_amount\",\"type\":\"double\"},{\"name\":\"tolls_amount\",\"type\":\"double\"},{\"name\":\"improvement_surcharge\",\"type\":\"double\"},{\"name\":\"total_amount\",\"type\":\"double\"},{\"name\":\"trip_id\",\"type\":\"long\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"padding\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TripEvent\",\"namespace\":\"com.corporate.realtime.entities\",\"fields\":[{\"name\":\"vendor_id\",\"type\":\"int\"},{\"name\":\"pickup_datetime\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"dropoff_datetime\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"passenger_count\",\"type\":\"int\"},{\"name\":\"trip_distance\",\"type\":\"double\"},{\"name\":\"ratecode_id\",\"type\":\"int\"},{\"name\":\"store_and_fwd_flag\",\"type\":\"string\"},{\"name\":\"pickup_location_id\",\"type\":\"int\"},{\"name\":\"dropoff_location_id\",\"type\":\"int\"},{\"name\":\"payment_type\",\"type\":\"int\"},{\"name\":\"fare_amount\",\"type\":\"double\"},{\"name\":\"extra\",\"type\":\"double\"},{\"name\":\"mta_tax\",\"type\":\"double\"},{\"name\":\"tip_amount\",\"type\":\"double\"},{\"name\":\"tolls_amount\",\"type\":\"double\"},{\"name\":\"improvement_surcharge\",\"type\":\"double\"},{\"name\":\"total_amount\",\"type\":\"double\"},{\"name\":\"trip_id\",\"type\":\"long\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"padding\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public int vendor_id;
   @Deprecated public long pickup_datetime;
@@ -419,18 +419,18 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   /** Creates a new TripEvent RecordBuilder */
-  public static com.belcorp.realtime.entities.TripEvent.Builder newBuilder() {
-    return new com.belcorp.realtime.entities.TripEvent.Builder();
+  public static com.corporate.realtime.entities.TripEvent.Builder newBuilder() {
+    return new com.corporate.realtime.entities.TripEvent.Builder();
   }
   
   /** Creates a new TripEvent RecordBuilder by copying an existing Builder */
-  public static com.belcorp.realtime.entities.TripEvent.Builder newBuilder(com.belcorp.realtime.entities.TripEvent.Builder other) {
-    return new com.belcorp.realtime.entities.TripEvent.Builder(other);
+  public static com.corporate.realtime.entities.TripEvent.Builder newBuilder(com.corporate.realtime.entities.TripEvent.Builder other) {
+    return new com.corporate.realtime.entities.TripEvent.Builder(other);
   }
   
   /** Creates a new TripEvent RecordBuilder by copying an existing TripEvent instance */
-  public static com.belcorp.realtime.entities.TripEvent.Builder newBuilder(com.belcorp.realtime.entities.TripEvent other) {
-    return new com.belcorp.realtime.entities.TripEvent.Builder(other);
+  public static com.corporate.realtime.entities.TripEvent.Builder newBuilder(com.corporate.realtime.entities.TripEvent other) {
+    return new com.corporate.realtime.entities.TripEvent.Builder(other);
   }
   
   /**
@@ -462,11 +462,11 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
 
     /** Creates a new Builder */
     private Builder() {
-      super(com.belcorp.realtime.entities.TripEvent.SCHEMA$);
+      super(com.corporate.realtime.entities.TripEvent.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(com.belcorp.realtime.entities.TripEvent.Builder other) {
+    private Builder(com.corporate.realtime.entities.TripEvent.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.vendor_id)) {
         this.vendor_id = data().deepCopy(fields()[0].schema(), other.vendor_id);
@@ -551,8 +551,8 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Creates a Builder by copying an existing TripEvent instance */
-    private Builder(com.belcorp.realtime.entities.TripEvent other) {
-            super(com.belcorp.realtime.entities.TripEvent.SCHEMA$);
+    private Builder(com.corporate.realtime.entities.TripEvent other) {
+            super(com.corporate.realtime.entities.TripEvent.SCHEMA$);
       if (isValidValue(fields()[0], other.vendor_id)) {
         this.vendor_id = data().deepCopy(fields()[0].schema(), other.vendor_id);
         fieldSetFlags()[0] = true;
@@ -641,7 +641,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'vendor_id' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setVendorId(int value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setVendorId(int value) {
       validate(fields()[0], value);
       this.vendor_id = value;
       fieldSetFlags()[0] = true;
@@ -654,7 +654,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'vendor_id' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearVendorId() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearVendorId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -665,7 +665,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'pickup_datetime' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setPickupDatetime(long value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setPickupDatetime(long value) {
       validate(fields()[1], value);
       this.pickup_datetime = value;
       fieldSetFlags()[1] = true;
@@ -678,7 +678,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'pickup_datetime' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearPickupDatetime() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearPickupDatetime() {
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -689,7 +689,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'dropoff_datetime' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setDropoffDatetime(long value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setDropoffDatetime(long value) {
       validate(fields()[2], value);
       this.dropoff_datetime = value;
       fieldSetFlags()[2] = true;
@@ -702,7 +702,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'dropoff_datetime' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearDropoffDatetime() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearDropoffDatetime() {
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -713,7 +713,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'passenger_count' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setPassengerCount(int value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setPassengerCount(int value) {
       validate(fields()[3], value);
       this.passenger_count = value;
       fieldSetFlags()[3] = true;
@@ -726,7 +726,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'passenger_count' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearPassengerCount() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearPassengerCount() {
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -737,7 +737,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'trip_distance' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setTripDistance(double value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setTripDistance(double value) {
       validate(fields()[4], value);
       this.trip_distance = value;
       fieldSetFlags()[4] = true;
@@ -750,7 +750,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'trip_distance' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearTripDistance() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearTripDistance() {
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -761,7 +761,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'ratecode_id' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setRatecodeId(int value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setRatecodeId(int value) {
       validate(fields()[5], value);
       this.ratecode_id = value;
       fieldSetFlags()[5] = true;
@@ -774,7 +774,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'ratecode_id' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearRatecodeId() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearRatecodeId() {
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -785,7 +785,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'store_and_fwd_flag' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setStoreAndFwdFlag(java.lang.CharSequence value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setStoreAndFwdFlag(java.lang.CharSequence value) {
       validate(fields()[6], value);
       this.store_and_fwd_flag = value;
       fieldSetFlags()[6] = true;
@@ -798,7 +798,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'store_and_fwd_flag' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearStoreAndFwdFlag() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearStoreAndFwdFlag() {
       store_and_fwd_flag = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -810,7 +810,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'pickup_location_id' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setPickupLocationId(int value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setPickupLocationId(int value) {
       validate(fields()[7], value);
       this.pickup_location_id = value;
       fieldSetFlags()[7] = true;
@@ -823,7 +823,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'pickup_location_id' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearPickupLocationId() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearPickupLocationId() {
       fieldSetFlags()[7] = false;
       return this;
     }
@@ -834,7 +834,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'dropoff_location_id' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setDropoffLocationId(int value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setDropoffLocationId(int value) {
       validate(fields()[8], value);
       this.dropoff_location_id = value;
       fieldSetFlags()[8] = true;
@@ -847,7 +847,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'dropoff_location_id' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearDropoffLocationId() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearDropoffLocationId() {
       fieldSetFlags()[8] = false;
       return this;
     }
@@ -858,7 +858,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'payment_type' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setPaymentType(int value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setPaymentType(int value) {
       validate(fields()[9], value);
       this.payment_type = value;
       fieldSetFlags()[9] = true;
@@ -871,7 +871,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'payment_type' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearPaymentType() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearPaymentType() {
       fieldSetFlags()[9] = false;
       return this;
     }
@@ -882,7 +882,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'fare_amount' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setFareAmount(double value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setFareAmount(double value) {
       validate(fields()[10], value);
       this.fare_amount = value;
       fieldSetFlags()[10] = true;
@@ -895,7 +895,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'fare_amount' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearFareAmount() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearFareAmount() {
       fieldSetFlags()[10] = false;
       return this;
     }
@@ -906,7 +906,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'extra' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setExtra(double value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setExtra(double value) {
       validate(fields()[11], value);
       this.extra = value;
       fieldSetFlags()[11] = true;
@@ -919,7 +919,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'extra' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearExtra() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearExtra() {
       fieldSetFlags()[11] = false;
       return this;
     }
@@ -930,7 +930,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'mta_tax' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setMtaTax(double value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setMtaTax(double value) {
       validate(fields()[12], value);
       this.mta_tax = value;
       fieldSetFlags()[12] = true;
@@ -943,7 +943,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'mta_tax' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearMtaTax() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearMtaTax() {
       fieldSetFlags()[12] = false;
       return this;
     }
@@ -954,7 +954,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'tip_amount' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setTipAmount(double value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setTipAmount(double value) {
       validate(fields()[13], value);
       this.tip_amount = value;
       fieldSetFlags()[13] = true;
@@ -967,7 +967,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'tip_amount' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearTipAmount() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearTipAmount() {
       fieldSetFlags()[13] = false;
       return this;
     }
@@ -978,7 +978,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'tolls_amount' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setTollsAmount(double value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setTollsAmount(double value) {
       validate(fields()[14], value);
       this.tolls_amount = value;
       fieldSetFlags()[14] = true;
@@ -991,7 +991,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'tolls_amount' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearTollsAmount() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearTollsAmount() {
       fieldSetFlags()[14] = false;
       return this;
     }
@@ -1002,7 +1002,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'improvement_surcharge' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setImprovementSurcharge(double value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setImprovementSurcharge(double value) {
       validate(fields()[15], value);
       this.improvement_surcharge = value;
       fieldSetFlags()[15] = true;
@@ -1015,7 +1015,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'improvement_surcharge' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearImprovementSurcharge() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearImprovementSurcharge() {
       fieldSetFlags()[15] = false;
       return this;
     }
@@ -1026,7 +1026,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'total_amount' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setTotalAmount(double value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setTotalAmount(double value) {
       validate(fields()[16], value);
       this.total_amount = value;
       fieldSetFlags()[16] = true;
@@ -1039,7 +1039,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'total_amount' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearTotalAmount() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearTotalAmount() {
       fieldSetFlags()[16] = false;
       return this;
     }
@@ -1050,7 +1050,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'trip_id' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setTripId(long value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setTripId(long value) {
       validate(fields()[17], value);
       this.trip_id = value;
       fieldSetFlags()[17] = true;
@@ -1063,7 +1063,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'trip_id' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearTripId() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearTripId() {
       fieldSetFlags()[17] = false;
       return this;
     }
@@ -1074,7 +1074,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'type' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setType(java.lang.CharSequence value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setType(java.lang.CharSequence value) {
       validate(fields()[18], value);
       this.type = value;
       fieldSetFlags()[18] = true;
@@ -1087,7 +1087,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'type' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearType() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearType() {
       type = null;
       fieldSetFlags()[18] = false;
       return this;
@@ -1099,7 +1099,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'padding' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder setPadding(java.lang.CharSequence value) {
+    public com.corporate.realtime.entities.TripEvent.Builder setPadding(java.lang.CharSequence value) {
       validate(fields()[19], value);
       this.padding = value;
       fieldSetFlags()[19] = true;
@@ -1112,7 +1112,7 @@ public class TripEvent extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Clears the value of the 'padding' field */
-    public com.belcorp.realtime.entities.TripEvent.Builder clearPadding() {
+    public com.corporate.realtime.entities.TripEvent.Builder clearPadding() {
       padding = null;
       fieldSetFlags()[19] = false;
       return this;

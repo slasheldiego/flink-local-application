@@ -1,8 +1,8 @@
-package com.belcorp.realtime.utils;
+package com.corporate.realtime.utils;
 
 import java.io.Serializable;
 
-import com.belcorp.realtime.entities.TripEvent;
+import com.corporate.realtime.entities.TripEvent;
 import org.apache.flink.core.io.SimpleVersionedSerializer;
 import org.apache.flink.streaming.api.functions.sink.filesystem.BucketAssigner;
 import org.apache.flink.streaming.api.functions.sink.filesystem.bucketassigners.SimpleVersionedStringSerializer;

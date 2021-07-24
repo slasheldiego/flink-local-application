@@ -1,6 +1,6 @@
-package com.belcorp.realtime.utils;
+package com.corporate.realtime.utils;
 
-import com.belcorp.realtime.entities.TripEvent;
+import com.corporate.realtime.entities.TripEvent;
 import org.apache.avro.data.TimeConversions;
 import org.apache.avro.specific.SpecificData;
 import org.apache.flink.api.common.serialization.DeserializationSchema;

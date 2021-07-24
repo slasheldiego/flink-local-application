@@ -1,4 +1,4 @@
-package com.belcorp.realtime.utils;
+package com.corporate.realtime.utils;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;

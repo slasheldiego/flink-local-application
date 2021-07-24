@@ -1,4 +1,4 @@
-package com.belcorp.realtime.utils;
+package com.corporate.realtime.utils;
 
 import com.amazonaws.services.kinesisanalytics.runtime.KinesisAnalyticsRuntime;
 import java.io.IOException;
