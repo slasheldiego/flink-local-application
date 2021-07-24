@@ -41,7 +41,7 @@ application {
 
 ext {
     javaVersion = '1.8'
-    flinkVersion = '1.13.1'
+    flinkVersion = '1.11.3'
     scalaBinaryVersion = '2.11'
     slf4jVersion = '1.7.7'
     log4jVersion = '1.2.17'
