@@ -30,7 +30,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println(new App().getGreeting());
 
-		final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
+		final ExecutionEnvironment env = ExecutionEnvironment.createLocalEnvironment();
 
         final ParameterTool params = ParameterTool.fromArgs(args);
 

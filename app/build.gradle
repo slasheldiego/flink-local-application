@@ -113,4 +113,11 @@ shadowJar {
                 'Implementation-Version': version,
                 "Main-Class": "$mainClassName"
     }
+
+    append 'reference.conf'
+
+    // Same happens if I replace the append line with the following line
+    transform(com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer) {
+        resource = 'reference.conf'
+    }
 }
