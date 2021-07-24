@@ -158,7 +158,7 @@ shadowJar {
         	'Implementation-Version': version,
         	"Main-Class": "$mainClassName"
     }
-    configurations.implementation.setCanBeResolved(true)
+    //configurations.implementation.setCanBeResolved(true)
     baseName = project.name + '-all'
     from { configurations.implementation.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
