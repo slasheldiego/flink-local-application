@@ -17,11 +17,6 @@ import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.functions.RuntimeContext;
 import org.apache.flink.api.common.serialization.Encoder;
 import org.apache.flink.api.java.utils.ParameterTool;
-import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.CommonClientConfigs;
-import org.elasticsearch.action.index.IndexRequest;
-import org.elasticsearch.client.Requests;
-import org.elasticsearch.common.xcontent.XContentType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
