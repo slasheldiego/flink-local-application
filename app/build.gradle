@@ -105,5 +105,11 @@ jar {
 }
 
 shadowJar {
-    configurations = [project.configurations.flinkShadowJar]
+    configurations = [project.configurations.compileClasspath]
+    zip64 true
+        manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+                'Implementation-Version': version,
+                "Main-Class": "$mainClassName"
+    }
 }
