@@ -6,6 +6,15 @@
  * User Manual available at https://docs.gradle.org/6.6/userguide/tutorial_java_projects.html
  */
 
+ buildscript {
+    repositories {
+        jcenter() // this applies only to the Gradle 'Shadow' plugin
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+    }
+}
+
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
