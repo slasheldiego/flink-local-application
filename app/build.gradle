@@ -24,6 +24,11 @@ version = '0.1-SNAPSHOT'
 mainClassName = 'com.corporate.realtime.analytics.App'
 description = """Flink Quickstart Job"""
 
+application {
+    // Define the main class for the application.
+    mainClassName = 'com.corporate.realtime.analytics.App'
+}
+
 ext {
     javaVersion = '1.8'
     flinkVersion = '1.8.0'
@@ -52,6 +57,20 @@ repositories {
     jcenter()
     mavenCentral()
     maven { url "https://repository.apache.org/content/repositories/snapshots/" }
+}
+
+// NOTE: We cannot use "compileOnly" or "shadow" configurations since then we could not run code
+// in the IDE or with "gradle run". We also cannot exclude transitive dependencies from the
+// shadowJar yet (see https://github.com/johnrengelman/shadow/issues/159).
+// -> Explicitly define the // libraries we want to be included in the "flinkShadowJar" configuration!
+configurations {
+    flinkShadowJar // dependencies which go into the shadowJar
+
+    // always exclude these (also from transitive dependencies) since they are provided by Flink
+    flinkShadowJar.exclude group: 'org.apache.flink', module: 'force-shading'
+    flinkShadowJar.exclude group: 'com.google.code.findbugs', module: 'jsr305'
+    flinkShadowJar.exclude group: 'org.slf4j'
+    flinkShadowJar.exclude group: 'log4j'
 }
 
 dependencies {
@@ -84,6 +103,17 @@ dependencies {
     implementation group: 'vc.inreach.aws', name: 'aws-signing-request-interceptor', version: '0.0.22'
 }
 
+// make compileOnly dependencies available for tests:
+sourceSets {
+    main.compileClasspath += configurations.flinkShadowJar
+    main.runtimeClasspath += configurations.flinkShadowJar
+
+    test.compileClasspath += configurations.flinkShadowJar
+    test.runtimeClasspath += configurations.flinkShadowJar
+
+    javadoc.classpath += configurations.flinkShadowJar
+}
+
 run.classpath = sourceSets.main.runtimeClasspath
 
 jar {
@@ -107,4 +137,8 @@ task fatJar(type: Jar) {
     exclude "META-INF/*.SF"
     exclude "META-INF/*.DSA"
     exclude "META-INF/*.RSA"
+}
+
+shadowJar {
+    configurations = [project.configurations.flinkShadowJar]
 }
