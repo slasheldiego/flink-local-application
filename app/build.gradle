@@ -51,11 +51,16 @@ tasks.withType(JavaCompile) {
 
 applicationDefaultJvmArgs = ["-Dlog4j.configuration=log4j.properties"]
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '6.4.1'
+}
+
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
     mavenCentral()
+    maven { url "https://repository.apache.org/content/repositories/snapshots/" }
 }
 
 // NOTE: We cannot use "compileOnly" or "shadow" configurations since then we could not run code
