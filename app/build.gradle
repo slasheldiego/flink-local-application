@@ -99,7 +99,7 @@ dependencies {
     implementation 'software.amazon.kinesis:amazon-kinesis-client:2.2.9'
     implementation 'org.apache.kafka:kafka_2.12:2.2.1'
     implementation 'org.apache.kafka:kafka-clients:2.2.1'
-    implementation group: 'org.apache.flink', name: 'flink-clients_2.11', version: '1.13.0'
+    compile group: 'org.apache.flink', name: 'flink-clients_2.11', version: '1.13.0'
     implementation group: 'org.apache.flink', name: 'flink-connector-kinesis_2.11', version: '1.13.0'
     implementation group: 'org.apache.flink', name: 'flink-connector-kafka_2.11', version: '1.13.0'
     implementation group: 'org.apache.flink', name: 'flink-json', version: '1.13.0'
